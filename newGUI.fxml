@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1366.0" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="paneTitle" prefHeight="50.0" prefWidth="1366.0">
+         <children>
+            <Label layoutX="550.0" layoutY="5.0" text="SAT SOLVER">
+               <font>
+                  <Font name="Raleway ExtraLight" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.419047619047619" endY="1.0" startX="0.44285714285714284">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="29.0" layoutY="104.0" text="Benchmark :">
+         <font>
+            <Font name="Raleway ExtraLight" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.22380952380952376" endY="0.3952380952380953" startX="0.6857142857142857" startY="0.24285714285714285">
+               <stops>
+                  <Stop color="#da3526" />
+                  <Stop color="#da3526" offset="0.007662835249042145" />
+                  <Stop color="#518c1d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ChoiceBox layoutX="151.0" layoutY="104.0" prefWidth="150.0" />
+   </children>
+</Pane>

@@ -1,0 +1,113 @@
+from Class RechercheAstar
+
+
+
+	public void startAstarSeatch() {
+
+		// Occurrence(); ///////////////////// MY MODIF ///////////////////
+
+		AstarSolution();
+
+		ArrayList<Integer> stat = new ArrayList<>();
+
+		/// Initialize first state
+		for (int i = 0; i < NbrVariables; i++) {
+			stat.add(-1);
+		}
+
+		int heuristicValue = NbrClauses;
+
+		AstarState state = new AstarState(stat, heuristicValue);
+		stat.clear(); // why is this ?
+
+		System.out.println(state.getState().size()); // ok but this is from the state inside the astar
+
+		ArrayList<AstarState> Open = new ArrayList<>();
+		ArrayList<AstarState> Closed = new ArrayList<>();
+		ArrayList<AstarState> Sons = new ArrayList<>();
+
+		/// Add first state in open list
+		Open.add(state);
+		int rand = 0;
+
+		int i = 1;
+		while (/* !Open.isEmpty() */i <= 1) {
+
+			Sons.clear();
+
+			/// Take first element of Open
+			stat = new ArrayList<Integer>(Open.get(0).getState());
+			heuristicValue = Open.get(0).getHeuristicValue();
+			state = new AstarState(stat, heuristicValue);
+
+			/// Remove it from Open
+			Open.remove(0);
+
+			/// Develop the current state if not a leaf
+			if (Isleaf(state.getState())) {
+				if (IsSolution(state.getState())) {
+					for (int p : state.getState()) {
+						System.out.print(p + " ");
+					}
+					break;
+				}
+			} else
+				Sons = new ArrayList<>(AstarSons(state));
+			i++;
+
+			for (AstarState a : Sons) {
+
+				for (int z : a.getState()) {
+					System.out.println(a.getState().toString());
+				}
+				System.out.println();
+			}
+		}
+	}
+
+	public ArrayList<AstarState> AstarSons(AstarState state) {
+
+		ArrayList<Integer> index = new ArrayList<Integer>();
+		AstarState son = new AstarState();
+		ArrayList<AstarState> Sons = new ArrayList<>();
+
+		/// We musn't generate a literal that already been valuated
+
+		for (int j = 0; j < NbrVariables; j++) {
+
+			/// We evaluate literal that hasn't been evaluated yet
+			if (state.getState().get(j) == -1)
+				index.add(j);
+		}
+
+		Random literal = new Random();
+		int rand = 0;
+
+		// Choosing randomly a literal and change his state to 0 or 1
+		if (index.size() == 1) {
+			rand = 0;
+		} else {
+			rand = literal.nextInt(index.size());
+		}
+		///
+
+		// Filling new state
+		for (int i = 0; i < state.getState().size(); i++) {
+			son.getState().add(state.getState().get(i));
+		}
+
+		/// Giving a 0 value to the literal chosen
+		son.getState().set(index.get(rand), 0);
+
+		/// Adding this new son to the Sons's list
+		Sons.add(son);
+
+		return Sons;
+
+	}
+
+  public void setHeuristic(AstarState State) { // just using ClauseCount
+		int heuristicValue = ClauseCount(State.getState());
+		State.setHeuristicValue(heuristicValue);
+	}
+hfhgf

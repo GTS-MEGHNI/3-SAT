@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+   <children>
+      <MenuBar id="menu" prefHeight="24.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem id="importer" mnemonicParsing="false" onAction="#importer" text="Importer fichier" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Recherches Exhaustive">
+              <items>
+                <MenuItem id="profondeur" mnemonicParsing="false" onAction="#profondeur" text="Recherche en profondeur" />
+                <MenuItem id="largeur" mnemonicParsing="false" onAction="#largeur" text="Recherche en largeur" />
+                <MenuItem id="profondeurMax" mnemonicParsing="false" onAction="#profondeurMax" text="Profondeur fusion" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Recherches Intelligente">
+              <items>
+                <MenuItem id="Genetic" mnemonicParsing="false" onAction="#genetic" text="Algorithme génétique" />
+                <MenuItem id="Astar" mnemonicParsing="false" onAction="#astar" text="Recherche A*" />
+                <MenuItem id="Astar2" mnemonicParsing="false" onAction="#astar2" text="Recherche A* All SAT" />
+                <MenuItem id="MAXastar" mnemonicParsing="false" onAction="#MAXastar" text="Recherche A* Merged SAT" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="176.0" layoutY="127.0" text="3-SAT">
+         <font>
+            <Font name="Raleway" size="100.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+   </children>
+  </Pane>

@@ -1,0 +1,21 @@
+RechercheExhaustive:
+  est une classe qui contient est méthodes et fonctions essentielles pour nous permettre la résolution du problème.
+  Elle contient aussi les attributs nécessaires.
+
+Attributs:
+  DataClause: les clauses récupérées depuis le fichier CNF.
+  NbrClauses, NbrVariables: Autodescriptives. dépend du fichier choisi.
+  Solution: une chaine de caractère servant à imprimer la solution trouvée.
+
+Méthodes:
+
+  IsSolution():
+    est une fonction qui vérifie si la solution généré est une solution valide
+    i.e: qui ne produit pas de contradictions avec les clauses
+
+  Isleaf():
+    est une fonction qui vérifie si état actuel est une feuille donc toutes les variables ont étaies générées
+
+  getSons():
+    est une fonction choisi un littéral de l'ensemble de noeuds non explorées et qui génère ses deux fils (les deux valeurs possibles).
+

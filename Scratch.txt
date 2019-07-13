@@ -1,0 +1,143 @@
+df
+
+A star
+  how I think it works
+
+  get clauses.
+  calculate most apparent variable
+
+  set a heuristic
+  change one of the vars until it is correct
+
+ok so we have a path form A to G
+we don't have a heuristic yet
+
+to create one
+  we do a search on that space ?
+  or do we do what ?
+
+
+  how to implement it ffs
+  stat has a state so -1 1 -1 0 etc
+  heuristic value has no sense here
+
+
+  we should do a rand solution
+  then change one var at a time until we get a solution
+
+heuristic might be how many vars to chage to find a solution
+since to go from a state to another you change one variables value
+
+so if we give the heuristic of a state a certain value
+how would it help us ?
+
+then again if we give the heuristic a state
+it would no mean much ?
+
+
+OKAY SO I ll start to decorticate your Solution
+startAstarSeatch
+stat is 20 init -1
+
+heuristicValue = 91 // why ?
+state is a f = g + h like
+
+AstarState has to change its agrs
+cant have a h value diff than state
+
+
+this whole thing is flawed man
+
+
+
+NEW SOLUTION
+
+heuristic = gets occurrence based value
+if a Astar has state where it has 20 vars
+that just means we have to make a heuristic for 1Mb of states
+
+so, I think it is quite obvious that a heuristic table
+should not surpass 20, NO ?
+think of each node/state as a path from start to current node
+I think we should start by generating a random state 20 vars
+then we start by changin based on the H table
+
+BUT this way, update to the table has no meaning
+then what is the solution, seriously
+
+
+WHAT IF IT IS LIKE THAT ?
+
+A million heuristic, it is not very logical
+but if the nodes are the states...
+
+
+create the open list of nodes, initially containing only our starting node
+create the closed list of nodes, initially empty
+
+while (we have not reached our goal)
+{
+	consider the best node in the open list (the node with the lowest f value)
+
+	if (this node is the goal)
+        {
+		then we're done
+	}
+	else
+        {
+		move the current node to the closed list and consider all of its neighbors
+
+		for (each neighbor)
+                {
+			if (this neighbor is in the closed list and our current g value is lower)
+                        {
+				update the neighbor with the new, lower, g value
+				change the neighbor's parent to our current node
+			}
+			else if (this neighbor is in the open list and our current g value is lower)
+                        {
+				update the neighbor with the new, lower, g value
+				change the neighbor's parent to our current node
+			}
+			else this neighbor is not in either the open or closed list
+                        {
+				add the neighbor to the open list and set its g value
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+ok so  I think I found it
+
+our 'A' point is a random state (no -1!)
+
+
+made it work, thanks to your Idea on the clauses
+
+So I ll make a junk file where we put unused methods
+
+
+
+
+
+A* multithread
+execution took4122
+execution took2848
+execution took2420
+execution took3536
+execution took3089
+execution took1634
+execution took4078
+execution took3169
+execution took3758
+execution took3547
+execution took3447
+
+Single Thread 32599
