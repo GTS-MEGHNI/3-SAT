@@ -208,7 +208,7 @@ public class GUIController implements Initializable{
 				HashMap<Long,Long> lineGraphMap = new HashMap<>();
 				
 				long startTime = System.currentTimeMillis();
-				ArrayList<Integer> solution = rech.startDepthSearch();
+				ArrayList<Integer> solution = rech.startDepthSearch(areaLog);
 				long endTime = System.currentTimeMillis();
 				
 				

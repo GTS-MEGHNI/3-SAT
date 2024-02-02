@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.jfoenix.controls.JFXSpinner;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -23,7 +25,7 @@ public class RechercheProfondeur extends Recherche{
 	
 	
 
-	public ArrayList<Integer> startDepthSearch() {
+	public ArrayList<Integer> startDepthSearch(JFXTextArea areaLog) {
 
 		long finishTime	= 0;
 		long startTime 	= System.currentTimeMillis();
