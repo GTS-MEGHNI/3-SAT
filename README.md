@@ -5,6 +5,8 @@ This project implements a solver for the 3-SAT problem using Java, CSS, JavaFX, 
 
 The solver implemented here can handle boolean formulas in conjunctive normal form (CNF) with clauses of different lengths. It utilizes the JavaFX library for the user interface and SceneBuilder for designing the GUI.
 
+Collaborator : https://github.com/Mabdou11
+
 ## Features
 - **Solver Algorithms**: Implements multiple algorithms for solving the 3-SAT problem, including:
   - Backtracking algorithm
